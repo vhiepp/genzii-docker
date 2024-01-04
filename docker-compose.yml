@@ -19,7 +19,7 @@ services:
     container_name: genzii-backend-laravel
     working_dir: /var/www/html
     ports:
-      - "8000:80"
+      - "80:80"
 
   genzii-frontend:
     build:
