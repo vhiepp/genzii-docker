@@ -19,4 +19,4 @@ RUN ["chmod", "777", "-R", "public"]
 
 RUN ["php", "artisan", "storage:link"]
 
-CMD ["php", "artisan", "migrate"]
+# CMD ["php", "artisan", "migrate", "--no-interaction"]
