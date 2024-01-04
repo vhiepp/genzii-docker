@@ -1,0 +1,115 @@
+
+
+.container-was-friends {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    // should set an even value
+    $diameter-ring: 60px;
+    $thickness-ring: 6px; 
+    $space-avatar-with-ring: 6px;
+
+    .user-avatar {
+        width: $diameter-ring;
+        height: $diameter-ring;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .story-ring {  
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(135deg, #0072FF 0%, #00C6FF 100%);
+            border-radius: 50%;
+            
+            /*  Rotate  */
+            animation-duration: 5s;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            z-index: 10;
+
+            position: relative;
+
+            .inner-ring {
+                width: calc(100% - $thickness-ring);
+                padding-top: calc(100% - $thickness-ring);
+                position: absolute;
+                inset: 0 auto auto 0;
+                transform: translateX($thickness-ring / 2) translateY($thickness-ring / 2);
+                background-color: var(--mode-app-bg-color-sub1);
+                border-radius: 50%;
+            }
+        }
+
+        @keyframes rotate {
+            0% {transform:rotate(0deg);}
+            100% {transform:rotate(360deg);}
+        }
+
+        .avatar-frame {
+            width: calc(100% - $thickness-ring - $space-avatar-with-ring);
+            height: calc(100% - $thickness-ring - $space-avatar-with-ring);
+
+            position: absolute;
+            inset: 0 auto auto 0;
+            transform: translateX(($thickness-ring + $space-avatar-with-ring) / 2) translateY(($thickness-ring + $space-avatar-with-ring) / 2);
+            background-color: var(--mode-app-bg-color-sub1);
+            border-radius: 50%;
+            z-index: 11;
+
+            overflow: hidden;
+
+            img {
+                display: block;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    } 
+
+    .user-name {
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--mode-app-txt-color);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    button {
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 18px;
+
+        &:hover {
+            cursor: pointer;
+        } 
+    }
+}

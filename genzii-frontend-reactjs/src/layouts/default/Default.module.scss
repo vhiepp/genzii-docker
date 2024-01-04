@@ -1,0 +1,19 @@
+
+
+.container-side-bar {
+    width: var(--width-side-bar);
+}
+
+.container-default-layout {
+    width: calc(100% - var(--width-side-bar));
+    // padding: 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

@@ -1,0 +1,217 @@
+
+
+.container-posts {
+    width: 600px;
+    border-radius: 10px;
+    padding: 15px 20px;
+    background-color: var(--mode-app-bg-color-sub1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+
+    .head_top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .head_top__left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+
+            .user {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+
+                // should set an even value
+                $diameter-ring: 54px;
+                $thickness-ring: 4px; 
+                $space-avatar-with-ring: 6px;
+
+                .user_avatar {
+                    width: $diameter-ring;
+                    height: $diameter-ring;
+                    position: relative;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .story-ring {  
+                        width: 100%;
+                        height: 100%;
+                        background-image: linear-gradient(135deg, #0072FF 0%, #00C6FF 100%);
+                        border-radius: 50%;
+                        
+                        /*  Rotate  */
+                        animation-duration: 5s;
+                        animation-name: rotate;
+                        animation-iteration-count: infinite;
+                        z-index: 10;
+        
+                        position: relative;
+        
+                        .inner-ring {
+                            width: calc(100% - $thickness-ring);
+                            padding-top: calc(100% - $thickness-ring);
+                            position: absolute;
+                            inset: 0 auto auto 0;
+                            transform: translateX($thickness-ring / 2) translateY($thickness-ring / 2);
+                            background-color: var(--mode-app-bg-color-sub1);
+                            border-radius: 50%;
+                        }
+                    }
+        
+                    @keyframes rotate {
+                        0% {transform:rotate(0deg);}
+                        100% {transform:rotate(360deg);}
+                    }
+    
+                    .user_frame {
+                        width: calc(100% - $thickness-ring - $space-avatar-with-ring);
+                        height: calc(100% - $thickness-ring - $space-avatar-with-ring);
+
+                        position: absolute;
+                        inset: 0 auto auto 0;
+                        transform: translateX(($thickness-ring + $space-avatar-with-ring) / 2) translateY(($thickness-ring + $space-avatar-with-ring) / 2);
+                        background-color: var(--mode-app-bg-color-sub1);
+                        border-radius: 50%;
+                        z-index: 11;
+    
+                        overflow: hidden;
+    
+                        img {
+                            display: block;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                } 
+
+                .user_name {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: var(--mode-app-txt-color);
+                    text-decoration: none;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .dot-status-access { 
+                margin-top: 4px;
+                display: flex;
+                align-items: center;
+
+                &.online {
+                    ion-icon {
+                        color: var(--color-dot-status-access-online);
+                    }
+                }
+
+                ion-icon {
+                    font-size: 10px;
+                    line-height: 1;
+                    color: var(--color-dot-status-access-offline);
+                }
+            }
+
+            .time {
+                color: #BBBBBB;
+            }
+        }
+
+        .head_top__right {
+            color: var(--mode-app-txt-color);
+
+            ion-icon {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .head_caption {
+        color: var(--mode-app-txt-color);
+    }
+}
+
+.content {
+    width: 100%;
+    height: 681px;
+    
+    .pic-frame {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.foot {
+    .foot_left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+
+        .heart-cluster,
+        .comment-cluster {
+            border-radius: 5px;
+            padding: 6px 10px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            color: var(--mode-app-txt-color);
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--mode-btn-color-hover);
+            }
+
+            ion-icon {
+                font-size: 25px;
+            }
+        }
+
+        .heart-cluster {
+            &.hearted {
+                ion-icon {
+                    color: var(--color-heart);
+                }
+            }
+        }
+    }
+}

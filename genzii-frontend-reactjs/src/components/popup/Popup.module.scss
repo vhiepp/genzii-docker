@@ -1,0 +1,22 @@
+
+.container-popup {
+    height: 100vh;
+    background-color: red;
+
+    &.show {
+        width: 100vw;
+        height: 100vh;
+        position: fixed !important;
+        inset: 0 !important;
+        background: rgba(0, 0, 0, 0.14);
+        backdrop-filter: blur(5px);
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        z-index: 999999;
+    }
+    
+}

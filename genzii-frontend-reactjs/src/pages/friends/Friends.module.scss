@@ -1,0 +1,105 @@
+
+.container-friend {
+    width: var(--width-app);
+    margin: 0 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    background-color: var(--mode-app-bg-color);
+}
+
+
+$height-select-bar: 100px;
+
+.select-bar {
+    height: $height-select-bar;
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+
+    position: fixed;
+    z-index: 100;
+    background-color: var(--mode-app-bg-color);
+
+
+
+    .select-item {
+        border-bottom: 3px solid #0073ff00;
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5px; 
+
+        &:hover {
+            cursor: pointer;
+            border-color: #0073ff69;
+        }
+
+        &.selected {
+            border-color: #0072FF;
+        }
+
+        .name {
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--mode-app-txt-color);
+        }
+
+        .number-tag {
+            width: 28px;
+            height: 28px;
+            padding: 5px;
+            border-radius: 50%;
+            background: var(--Main, linear-gradient(83deg, #0072FF -1.62%, #00C6FF 104.38%));
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-size: 11px;
+                line-height: 1;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.body {
+    width: 80%;
+    height: 100%;
+    margin: calc($height-select-bar + 50px) 0 0 0;
+    border-radius: 10px;
+    padding: 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 20px;
+
+    background-color: var(--mode-app-bg-color-sub1);
+}
+
+.foot {
+    .show-more-txt {
+        color: #0072FF;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .the-end-txt {
+        color: var(--mode-app-txt-color);
+    }
+}

@@ -1,0 +1,192 @@
+$width-container: 450px;
+
+.container-see-detail-story {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    ;
+    gap: 10px;
+
+    .container {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--mode-app-bg-color);
+        overflow: hidden;
+
+        .head {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background: var(--Main, linear-gradient(83deg, #0072FF -1.62%, #00C6FF 104.38%));
+            overflow: hidden;
+
+            .title {
+                font-weight: 500;
+                color: #fff;
+            }
+        }
+
+        .story {
+            width: $width-container;
+            height: calc($width-container * 1.3333);
+            background-color: var(--mode-app-bg-color);
+            position: relative;
+
+            .story_head {
+                .left {
+                    padding: 10px 15px;
+                    position: absolute;
+                    inset: 0 0 auto 0;
+
+                    .user-area {
+
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 10px;
+
+                        // should set an even value
+                        $diameter-ring: 45px;
+                        $thickness-ring: 4px;
+                        $space-avatar-with-ring: 4px;
+
+                        .user-avatar {
+                            width: $diameter-ring;
+                            height: $diameter-ring;
+                            position: relative;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            .story-ring {
+                                width: 100%;
+                                height: 100%;
+                                background-image: linear-gradient(135deg, #0072FF 0%, #00C6FF 100%);
+                                border-radius: 50%;
+
+                                /*  Rotate  */
+                                animation-duration: 5s;
+                                animation-name: rotate;
+                                animation-iteration-count: infinite;
+                                z-index: 10;
+
+                                position: relative;
+
+                                .inner-ring {
+                                    width: calc(100% - $thickness-ring);
+                                    padding-top: calc(100% - $thickness-ring);
+                                    position: absolute;
+                                    inset: 0 auto auto 0;
+                                    transform: translateX($thickness-ring / 2) translateY($thickness-ring / 2);
+                                    background-color: var(--mode-app-bg-color);
+                                    border-radius: 50%;
+                                }
+                            }
+
+                            @keyframes rotate {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+
+                            .avatar-frame {
+                                width: calc(100% - $thickness-ring - $space-avatar-with-ring);
+                                height: calc(100% - $thickness-ring - $space-avatar-with-ring);
+
+                                position: absolute;
+                                inset: 0 auto auto 0;
+                                transform: translateX(($thickness-ring + $space-avatar-with-ring) / 2) translateY(($thickness-ring + $space-avatar-with-ring) / 2);
+                                background-color: #fff;
+                                border-radius: 50%;
+                                z-index: 11;
+
+                                overflow: hidden;
+
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .user-name {
+                            font-size: 18px;
+                            font-weight: 600;
+                            text-decoration: none;
+                            color: #fff;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        .separator {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+
+                            ion-icon {
+                                font-size: 8px;
+                                color: #A0A0A0;
+                            }
+                        }
+
+                        .time {
+                            color: var(--mode-app-txt-color-sub1);
+                        }
+                    }
+                }
+            }
+
+
+
+            video {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+
+    .btn-next,
+    .btn-prev {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        line-height: 1;
+        font-size: 25px;
+        z-index: 99999999;
+
+        color: var(--mode-app-txt-color);
+        background-color: transparent;
+
+        &.transparent {
+            color: transparent;
+            background-color: transparent;
+
+            &:hover {
+                cursor: default;
+                background-color: transparent;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--mode-nav-bg-color-hover);
+        }
+    }
+}

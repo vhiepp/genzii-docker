@@ -1,0 +1,253 @@
+
+
+.container-profile {
+    width: var(--width-app);
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 60px;
+    
+    background-color: var(--mode-app-bg-color);
+}
+
+.head {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 30px;
+
+    .main-head {
+        width: 100%;
+        display: flex;
+        flex-direction: row;    
+        align-items: center;
+        justify-content: space-between; 
+        
+        .main-head_left {
+            display: flex;
+            flex-direction: row;    
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+    
+            // should set an even value
+            $diameter-ring: 130px;
+            $thickness-ring: 8px; 
+            $space-avatar-with-ring: 8px;
+    
+            .user-avatar {
+                width: $diameter-ring;
+                height: $diameter-ring;
+                position: relative;
+    
+                &:hover {
+                    cursor: pointer;
+                }
+    
+                .story-ring {  
+                    width: 100%;
+                    height: 100%;
+                    background-image: linear-gradient(135deg, #0072FF 0%, #00C6FF 100%);
+                    border-radius: 50%;
+                    
+                    /*  Rotate  */
+                    animation-duration: 5s;
+                    animation-name: rotate;
+                    animation-iteration-count: infinite;
+                    z-index: 10;
+    
+                    position: relative;
+    
+                    .inner-ring {
+                        width: calc(100% - $thickness-ring);
+                        padding-top: calc(100% - $thickness-ring);
+                        position: absolute;
+                        inset: 0 auto auto 0;
+                        transform: translateX($thickness-ring / 2) translateY($thickness-ring / 2);
+                        background-color: var(--mode-app-bg-color);
+                        border-radius: 50%;
+                    }
+                }
+    
+                @keyframes rotate {
+                    0% {transform:rotate(0deg);}
+                    100% {transform:rotate(360deg);}
+                }
+    
+                .user_frame {
+                    width: calc(100% - $thickness-ring - $space-avatar-with-ring);
+                    height: calc(100% - $thickness-ring - $space-avatar-with-ring);
+    
+                    position: absolute;
+                    inset: 0 auto auto 0;
+                    transform: translateX(($thickness-ring + $space-avatar-with-ring) / 2) translateY(($thickness-ring + $space-avatar-with-ring) / 2);
+                    background-color: var(--mode-app-bg-color);
+                    border-radius: 50%;
+                    z-index: 11;
+    
+                    overflow: hidden;
+    
+                    img {
+                        display: block;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            } 
+    
+            .user-name {
+                display: flex;
+                flex-direction: column;    
+                align-items: left;
+                justify-content: flex-start;
+                gap: 15px;
+    
+                .user-name_main {
+                    font-size: 35px;
+                    font-weight: 600;
+                    line-height: 1;
+                    color: var(--mode-app-txt-color);
+                }
+    
+                .user-name_nickname { 
+                    font-size: 25px;
+                    font-weight: 600;
+                    line-height: 1;
+                    color: #B4B4B4;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    
+        .main-head_right {
+            display: flex;
+            flex-direction: row;    
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+            
+            .btn-del-friend,
+            .btn-add-friend,
+            .btn-cancel-invitation,
+            .btn-chat,
+            .btn-follow {
+                border-radius: 10px;
+                padding: 10px 20px;
+                font-size: 20px; 
+                font-weight: 500;
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .sub-head {
+        width: 100%; 
+
+        .statistical-bar {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+
+            .statistical_item {
+                .number, .desc {
+                    font-size: 22px;
+                }
+
+                .number {
+                    font-weight: 700;
+                    color: var(--mode-app-txt-color);
+                }
+                .desc {
+                    font-weight: 500;
+                    margin-left: 10px;
+                    color: var(--mode-app-txt-color);
+                }
+            }
+        }
+
+        .desc-myself {
+            margin-top: 15px;
+            font-size: 20px;
+            color: var(--mode-app-txt-color);
+            font-weight: 600;
+        }
+    }
+}
+
+.body {
+
+    .body_title {
+        font-size: 23px;
+        font-weight: 600;
+        color: var(--mode-app-txt-color);
+    }
+
+    $gap: 20px;
+    $num-item-in-row: 3;
+    $with-posts: calc((100% - $gap * $num-item-in-row + $gap) / $num-item-in-row);
+
+    .body_container {
+        margin-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        gap: $gap;
+
+        .item {
+            width: $with-posts;
+            height: $with-posts; 
+            width: 320px;
+            height: 427px; 
+            // OR
+            // width: calc((100% / $num-item-in-row) - ($gap * ($num-item-in-row - 1)) / $num-item-in-row);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .pic-frame {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.popup {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(5px);
+
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999999;
+
+    &.show {
+        display: flex; 
+    }
+}

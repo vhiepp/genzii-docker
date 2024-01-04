@@ -1,0 +1,87 @@
+  
+// ----------- for button default -------------
+// base
+.btn-base {
+    background-color: var(--mode-btn-bg-color);
+    color: var(--mode-btn-txt-color);
+    
+    &> * {
+        color: var(--mode-btn-txt-color);
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: var(--mode-btn-bg-color-hover);
+        color: var(--mode-btn-txt-color-hover); 
+    } 
+
+    &.btn_select {
+        background-color: var(--mode-btn-bg-color-selected);
+        color: var(--mode-btn-txt-color-selected);
+    }
+}  
+
+.btn-non-bg {
+    background-color: transparent;
+    color: var(--mode-btn-txt-color-base);
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--mode-btn-bg-color-hover);
+        color: var(--mode-btn-text-color-hover); 
+    } 
+
+    &.btn_select {
+        background-color: var(--mode-btn-bg-color-selected);
+        color: var(--mode-btn-txt-color-selected);
+    }
+}
+
+// gradient
+.btn-gradient {
+    background: var(--Main, linear-gradient(83deg, #0072FF -1.62%, #00C6FF 104.38%));
+    color: #fff;
+}
+
+
+//  ------------------- for button navigation ----------------
+.nav_btn-base {
+    background-color: var(--mode-btn-bg-color);
+    color: var(--mode-btn-txt-color);
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--mode-btn-bg-color-hover);
+        color: var(--mode-btn-txt-color-hover); 
+    } 
+
+    &.btn_select {
+        background-color: var(--mode-btn-bg-color-selected);
+        color: var(--mode-btn-txt-color-selected);
+    }
+}  
+
+.nav_btn-non-bg {
+    background-color: transparent;
+    color: var(--mode-btn-txt-color);
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--mode-btn-bg-color);
+        color: var(--mode-btn-txt-color-hover);
+    } 
+
+    &.nav_btn-active {
+        background-color: var(--mode-btn-bg-color-selected);
+        color: var(--mode-btn-txt-color-selected);
+    }
+}
+ 
+
+  
+//  Link
+
+.txt-link {
+    text-decoration: none;
+    color: chartreuse;
+}

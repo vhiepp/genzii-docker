@@ -1,0 +1,43 @@
+version: "3"
+services:
+  mysql-server:
+    build:
+      context: ./genzii-mysql
+      dockerfile: ./Dockerfile
+    container_name: mysql-server
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Genzii12345@@
+      
+  genzii-backend:
+    links:
+      - mysql-server
+    build:
+      context: ./genzii-backend-laravel
+      dockerfile: ./Dockerfile
+    container_name: genzii-backend-laravel
+    working_dir: /var/www/html
+    ports:
+      - "8000:80"
+
+  genzii-frontend:
+    build:
+      context: ./genzii-frontend-reactjs
+      dockerfile: ./Dockerfile
+    container_name: genzii-frontend-reactjs
+    ports:
+      - "80:80"
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email dhiep9798@gmail.com --agree-tos -d genzii.vhiep.com
+    
+  
+    
+
+  
+
+  

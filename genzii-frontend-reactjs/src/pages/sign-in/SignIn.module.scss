@@ -1,0 +1,152 @@
+
+.container-sign-in {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: 'Quicksand';
+
+    .background-frame {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    .sign-in-area {
+        width: 350px;
+        position: absolute;
+        top: 50%;
+        right: 20%;
+        transform: translateY(-50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 30px;
+
+        .title {
+            text-align: center;
+            font-size: 23px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .local {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            gap: 10px;
+
+            .input {
+                border-radius: 50px;
+                border: 1px solid #ccc;
+                overflow: hidden;
+                background-color: transparent;
+                
+                input {
+                    width: 100%;
+                    padding: 13px 20px;
+                    outline: none;
+                    font-size: 20px;
+                    background-color: transparent;
+                    font-family: 'Quicksand';
+                    color: #fff;
+
+                    &::placeholder {
+                        color: #fff;
+                        opacity: 1; /* Firefox */
+                    }
+                      
+                    &::-ms-input-placeholder { /* Edge 12 -18 */
+                        color: #fff;
+                    }
+                }
+            }
+
+            .btn-sign-in {
+                border-radius: 50px;
+                padding: 13px 25px;
+                font-size: 20px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .sign-up-bar {
+                .desc {
+                    color: #fff;
+                }
+            }
+        }
+
+        .provider {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            gap: 10px;
+
+            .desc {
+                text-align: center;
+                color: #fff;
+            } 
+
+            .btn-sign-in {
+                &.google,
+                &.microsoft,
+                &.github {
+                    border-radius: 50px;
+                    padding: 10px 20px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 10px;
+    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    
+                    .icon-provider-frame {
+                        width: 25px;
+                        height: 25px;
+                        overflow: hidden;
+    
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    
+                    span {
+                        font-size: 16px;
+                        font-family: 'Quicksand';
+                    }
+                }
+            }
+
+            .btn-sign-in-github {
+                background-color: #222222;
+
+                .icon-provider-frame {
+                    background-color: #fff;
+                }
+
+                span {
+                    color: #fff;
+                    font-family: 'Quicksand';
+                }
+            }
+        }
+    }
+}

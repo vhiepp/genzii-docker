@@ -1,0 +1,202 @@
+
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+:root {
+    --width-app: 1000px;
+    --color-hover-btn: #E9E9E9;
+
+    --width-side-bar: 330px;
+
+    --color-dot-status-access-online: #8cff01;
+    --color-dot-status-access-offline: #A0A0A0;
+
+    --color-heart: #FF0000;
+
+    // ----------------------
+    // App
+        // background
+        --mode-app-bg-color: red;
+        --mode-app-bg-color-sub1: red;
+
+        // text
+        --mode-app-txt-color: red;
+        --mode-app-txt-color-sub1: red; 
+        --mode-app-txt-color-sub2: red; 
+
+    // button
+        // background
+        --mode-btn-bg-color: red;
+        --mode-btn-bg-color-hover: red;
+        --mode-btn-bg-color-selected: red;
+
+        --mode-btn-bg-color-sub1: red;
+        --mode-btn-bg-color-sub1-hover: red;
+        --mode-btn-bg-color-sub1-selected: red;
+
+        // text
+        --mode-btn-txt-color: red;
+        --mode-btn-txt-color-hover: red;
+        --mode-btn-txt-color-selected: red;
+
+        --mode-btn-txt-color-sub1: red;
+        --mode-btn-txt-color-sub1-hover: red;
+        --mode-btn-txt-color-sub1-selected: red;
+
+    // navigate item / navigate button
+        // background
+        --mode-nav-bg-color: red;
+        --mode-nav-bg-color-hover: red;
+        --mode-nav-bg-color-selected: red;
+
+        --mode-nav-bg-color-sub1: red;
+        --mode-nav-bg-color-sub1-hover: red;
+        --mode-nav-bg-color-sub1-selected: red;
+
+        // text
+        --mode-nav-txt-color: red;
+        --mode-nav-txt-color-hover: red;
+        --mode-nav-txt-color-selected: red;
+
+        --mode-nav-txt-color-sub1: red;
+        --mode-nav-txt-color-sub1-hover: red;
+        --mode-nav-txt-color-sub1-selected: red;
+
+    // box shadows
+        --mode-shadow-bg-color: rgba(0, 0, 0, 0.395);
+
+    // border line
+    --mode-border-color: #C0C0C0;
+}
+
+.container-app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    font-family: 'Quicksand'; 
+    
+    background-color: var(--mode-app-bg-color); 
+
+    &.light-mode {
+        // App
+        // background
+        --mode-app-bg-color: #fff; 
+        --mode-app-bg-color-sub1: #f6f6f6; 
+
+        // text
+        --mode-app-txt-color: #000;
+        --mode-app-txt-color-sub1: #B4B4B4; 
+        --mode-app-txt-color-sub2: #535353; 
+
+        // button
+            // background
+            --mode-btn-bg-color: #E9E9E9;
+            --mode-btn-bg-color-hover: #E9E9E9;
+            --mode-btn-bg-color-selected: #E9E9E9;
+
+            --mode-btn-bg-color-sub1: transparent;
+            --mode-btn-bg-color-sub1-hover: transparent;
+            --mode-btn-bg-color-sub1-selected: transparent;
+
+            // text
+            --mode-btn-txt-color: #000;
+            --mode-btn-txt-color-hover: #000;
+            --mode-btn-txt-color-selected: #000;
+
+            --mode-btn-txt-color-sub1: transparent;
+            --mode-btn-txt-color-sub1-hover: transparent;
+            --mode-btn-txt-color-sub1-selected: transparent;
+
+        // navigate item / navigate button
+            // background
+            --mode-nav-bg-color: transparent;
+            --mode-nav-bg-color-hover: #E9E9E9;
+            --mode-nav-bg-color-selected: #E9E9E9;
+
+            --mode-nav-bg-color-sub1: transparent;
+            --mode-nav-bg-color-sub1-hover: transparent;
+            --mode-nav-bg-color-sub1-selected: transparent;
+
+            // text
+            --mode-nav-txt-color: #000;
+            --mode-nav-txt-color-hover: #000;
+            --mode-nav-txt-color-selected: #000;
+
+            --mode-nav-txt-color-sub1: transparent;
+            --mode-nav-txt-color-sub1-hover: transparent;
+            --mode-nav-txt-color-sub1-selected: transparent;
+
+        // border line
+        --mode-border-color: #C0C0C0;
+    }
+    
+    &.dark-mode {
+        // App
+        // background
+        --mode-app-bg-color: #121212; 
+        --mode-app-bg-color-sub1: #1e1e1e; 
+
+        // text
+        --mode-app-txt-color: #dfdfdf;
+        --mode-app-txt-color-sub1: #B4B4B4; 
+        --mode-app-txt-color-sub2: #535353; 
+
+        // button
+            // background
+            --mode-btn-bg-color: #313131;
+            --mode-btn-bg-color-hover: #313131;
+            --mode-btn-bg-color-selected: #313131;
+
+            --mode-btn-bg-color-sub1: transparent;
+            --mode-btn-bg-color-sub1-hover: transparent;
+            --mode-btn-bg-color-sub1-selected: transparent;
+
+            // text
+            --mode-btn-txt-color: #fff;
+            --mode-btn-txt-color-hover: #fff;
+            --mode-btn-txt-color-selected: #fff;
+
+            --mode-btn-txt-color-sub1: transparent;
+            --mode-btn-txt-color-sub1-hover: transparent;
+            --mode-btn-txt-color-sub1-selected: transparent;
+
+        // navigate item / navigate button
+            // background
+            --mode-nav-bg-color: transparent;
+            --mode-nav-bg-color-hover: #1e1e1e;
+            --mode-nav-bg-color-selected: #1e1e1e;
+
+            --mode-nav-bg-color-sub1: transparent;
+            --mode-nav-bg-color-sub1-hover: transparent;
+            --mode-nav-bg-color-sub1-selected: transparent;
+
+            // text
+            --mode-nav-txt-color: #fff;
+            --mode-nav-txt-color-hover: #fff;
+            --mode-nav-txt-color-selected: #fff;
+
+            --mode-nav-txt-color-sub1: transparent;
+            --mode-nav-txt-color-sub1-hover: transparent;
+            --mode-nav-txt-color-sub1-selected: transparent;
+
+        // border line
+        --mode-border-color: #3d3d3d;
+    }
+
+} 

@@ -1,0 +1,56 @@
+
+// should set an even value
+$diameter-ring: 21px;
+$thickness-ring: 5px; 
+$space-checked-with-ring: 5px;
+
+.my-radio-check-box {
+    width: $diameter-ring;
+    height: $diameter-ring;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.off {
+        .checked {
+            display: none;
+        }
+    }
+
+    .ring {  
+        width: 100%;
+        height: 100%;
+        background-color: var(--mode-btn-bg-color);
+        border-radius: 50%;
+        
+        position: relative;
+        z-index: 10;
+
+
+        .inner-ring {
+            width: calc(100% - $thickness-ring);
+            padding-top: calc(100% - $thickness-ring);
+            position: absolute;
+            inset: 0 auto auto 0;
+            transform: translateX($thickness-ring / 2) translateY($thickness-ring / 2);
+            background-color: var(--mode-app-bg-color);
+            border-radius: 50%;
+        }
+    }
+
+    .checked {
+        width: calc(100% - $thickness-ring - $space-checked-with-ring);
+        height: calc(100% - $thickness-ring - $space-checked-with-ring);
+
+        position: absolute;
+        inset: 0 auto auto 0;
+        transform: translateX(($thickness-ring + $space-checked-with-ring) / 2) translateY(($thickness-ring + $space-checked-with-ring) / 2);
+        background: var(--Main, linear-gradient(83deg, #0072FF -1.62%, #00C6FF 104.38%));
+        border-radius: 50%;
+        z-index: 1100000; 
+    }
+} 
+
+ 
