@@ -28,7 +28,7 @@ export default function Message() {
     const fetchDataUser = async () => {
         setLoading(true); 
 
-        await axios.get(`https://genzii-api.vhiep.com/api/auth/profile`, { withCredentials: true })
+        await axios.get(`http://genzii.vhiep.com:8000/api/auth/profile`, { withCredentials: true })
             .then(responses => {
                 const cur_user = responses.data.data.profile;
                 setCurrentUser(cur_user);
@@ -68,7 +68,7 @@ export default function Message() {
             }
         });
         if (id_arr.length > 0) {
-            const resProfile = await axios.post(`https://genzii-api.vhiep.com/api/user/profile`, {
+            const resProfile = await axios.post(`http://genzii.vhiep.com:8000/api/user/profile`, {
                 uid: id_arr,
                 group: true
             },{ withCredentials: true });

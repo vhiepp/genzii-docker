@@ -31,8 +31,8 @@ export default function ChatBox(props) {
         setLoading(true);
         try {
             const [response1, response2] = await Promise.all([
-                axios.get(`https://genzii-api.vhiep.com/api/auth/profile`, { withCredentials: true }),
-                axios.get(`https://genzii-api.vhiep.com/api/user/${id}`, { withCredentials: true })
+                axios.get(`http://genzii.vhiep.com:8000/api/auth/profile`, { withCredentials: true }),
+                axios.get(`http://genzii.vhiep.com:8000/api/user/${id}`, { withCredentials: true })
             ]);
 
             const cur_user = response1.data.data.profile;
@@ -51,7 +51,7 @@ export default function ChatBox(props) {
     };
 
     const getUserbyUid = (uid) => {
-        axios.get(`https://genzii-api.vhiep.com/api/user/${uid}`, {
+        axios.get(`http://genzii.vhiep.com:8000/api/user/${uid}`, {
             withCredentials: true  // Cho phép Axios sử dụng cookie
         })
             .then(response => {
