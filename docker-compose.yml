@@ -14,16 +14,18 @@ services:
     build:
       context: ./genzii-backend-laravel
       dockerfile: ./Dockerfile
-    container_name: genzii-backend-laravel
+    container_name: genzii-backend
     working_dir: /var/www/html
     ports:
       - "8000:80"
+    expose:
+      - 8000
 
   genzii-frontend:
     build:
       context: ./genzii-frontend-reactjs
       dockerfile: ./Dockerfile
-    container_name: genzii-frontend-reactjs
+    container_name: genzii-frontend
     ports:
       - "80:80"
     
