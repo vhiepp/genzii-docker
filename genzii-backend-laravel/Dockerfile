@@ -18,3 +18,5 @@ RUN ["chmod", "777", "-R", "bootstrap"]
 RUN ["chmod", "777", "-R", "public"]
 
 RUN ["php", "artisan", "storage:link"]
+
+CMD ["php", "artisan", "migrate"]

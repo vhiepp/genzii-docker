@@ -1,6 +1,7 @@
 version: "3"
 services:
   mysql-server:
+    image: mysql:8.0.35
     build:
       context: ./genzii-mysql
       dockerfile: ./Dockerfile
@@ -28,12 +29,6 @@ services:
     container_name: genzii-frontend-reactjs
     ports:
       - "80:80"
-
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email dhiep9798@gmail.com --agree-tos -d genzii.vhiep.com
     
   
     
