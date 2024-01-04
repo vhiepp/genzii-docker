@@ -18,8 +18,6 @@ services:
     working_dir: /var/www/html
     ports:
       - "8000:80"
-    expose:
-      - 8000
 
   genzii-frontend:
     build:
