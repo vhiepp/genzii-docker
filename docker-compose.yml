@@ -19,6 +19,15 @@ services:
     ports:
       - "8000:80"
 
+  genzii-image-server:
+    build:
+      context: ./genzii-image-server
+      dockerfile: ./Dockerfile
+    container_name: genzii-image-server
+    working_dir: /var/www/html
+    ports:
+      - "9000:80"
+
   genzii-frontend:
     build:
       context: ./genzii-frontend-reactjs
