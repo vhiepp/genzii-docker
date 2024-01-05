@@ -7,6 +7,7 @@ services:
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: Genzii12345@@
+      MYSQL_DATABASE: genzii
     volumes:
       - ./mysql:/mysql
       
