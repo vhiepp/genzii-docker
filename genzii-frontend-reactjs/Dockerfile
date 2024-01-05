@@ -13,6 +13,8 @@ FROM development AS build
 
 RUN yarn build
 
+RUN rm -rf node_modules
+
 FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
