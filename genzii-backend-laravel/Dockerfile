@@ -7,6 +7,7 @@ COPY . .
 COPY ./docker/nginx_log /var/log/nginx
 COPY ./docker/php-fpm/php-fpm.log /var/log/php-fpm.log
 COPY ./docker/config/app.conf /etc/nginx/conf.d/app.conf
+COPY ./docker/letsencrypt /etc/letsencrypt
 
 RUN ["composer", "install", "--no-interaction"]
 RUN ["chown", "www-data:www-data", "-R", "storage"]
