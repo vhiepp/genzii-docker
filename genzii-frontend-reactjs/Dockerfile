@@ -1,4 +1,3 @@
-
 FROM node:lts AS development
 
 WORKDIR /app
