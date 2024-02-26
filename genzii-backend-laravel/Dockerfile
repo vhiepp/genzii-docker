@@ -19,4 +19,6 @@ RUN ["chmod", "777", "-R", "public"]
 
 RUN ["php", "artisan", "storage:link"]
 
+VOLUME [ "/data" ]
+
 # CMD ["php", "artisan", "migrate", "--no-interaction"]

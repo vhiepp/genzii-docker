@@ -16,6 +16,8 @@ services:
       dockerfile: ./Dockerfile
     container_name: genzii-backend
     working_dir: /var/www/html
+    volumes:
+      - ./images:/var/www/html/storage/app
     ports:
       - "8000:80"
     networks:
