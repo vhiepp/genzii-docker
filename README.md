@@ -20,3 +20,4 @@ docker compose up -d
 ```terminal
 docker exec -it genzii-backend php artisan migrate
 ```
+Truy cập <a href="http://localhost">http://localhost</a>
